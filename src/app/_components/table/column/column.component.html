@@ -1,0 +1,10 @@
+<div 
+	class="b-column" 
+	[ngClass]="{
+		'sorting': sort === 'none',
+		'sorting_asc': sort === 'asc',
+		'sorting_desc': sort === 'desc'
+	}"
+	(click)="onSortChange()">
+	{{ name }}
+</div>

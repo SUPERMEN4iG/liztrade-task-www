@@ -1,0 +1,6 @@
+<div class="input-group mb-3">
+	<div class="input-group-prepend">
+	  	<span class="input-group-text" id="basic-addon1">🔎</span>
+	</div>
+	<input type="text" [(ngModel)]="value" (input)="onInputChange.next($event.target.value)" class="form-control" placeholder="Type to search" aria-label="Username" aria-describedby="basic-addon1">
+</div>

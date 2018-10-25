@@ -1,0 +1,29 @@
+<div class="b-table">
+	<div class="b-table__grid">
+		<table-search (onSearch)="onSearchChange($event)"></table-search>
+		<table class="table dataTable">
+			<thead>
+				<tr>
+					<th scope="col" *ngFor="let field of fields">
+						<table-column 
+							[name]="field.name" 
+							[(sort)]="field.sort" 
+							(sortChange)="onSortChange(field, $event)">
+						</table-column>
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody [@.disabled]="isAnimationBlock">
+				<tr *ngFor="let row of data; let index = index;" [@flyInOut]="'in'" (@flyInOut.done)="isAnimationBlock = true">
+					<td *ngFor="let field of fields">{{ row[field.name] }}</td>
+					<td><button class="btn btn-danger" (click)="onDelete(index)">❌</button></td>
+				</tr> 
+			</tbody>
+		</table>
+	</div>
+
+	<div class="b-table__editor">
+		<table-editor></table-editor>
+	</div>
+</div>

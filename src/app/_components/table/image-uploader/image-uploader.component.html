@@ -1,0 +1,9 @@
+<div class="card b-image-uploader">
+	<img [src]="image" alt="">
+
+	<input 
+		style="display: none" 
+		type="file" (change)="onFileChanged($event)" 
+		#fileInput>
+	  <button class="btn btn-default" type="button" (click)="fileInput.click()">Select File</button>
+</div>

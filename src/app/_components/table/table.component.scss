@@ -1,0 +1,21 @@
+.b-table {
+	&__grid {
+		width: 70%;
+
+		table {
+			tbody {
+				tr > td:not(:last-child) {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	&__editor {
+		width: 30%;
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding-left: 0.8rem;
+	}
+}
